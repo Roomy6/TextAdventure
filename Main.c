@@ -27,8 +27,8 @@ int main(void)
 	printf("This Game is purely for a simple project ;)\n\n");
 	//printf("%s %d", charCoins, intCoins);
 
-	// ???
-	playerMovement;
+	// forgot    this
+	playerMovement();
 
 	return 0;
 }
