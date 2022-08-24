@@ -60,6 +60,18 @@ void player(void)
 		printf("%s\n", charGender);
 	}
 
+	// Player Preview
+
+	// Male
+	char mModel1[4] = " # ";
+	char mModel2[4] = "/#\ ";
+	char mModel3[4] = "| |";
+
+	// Female
+	char fModel1[4] = " @ ";
+	char fModel2[4] = "/#\ ";
+	char fModel3[4] = "| |";
+
 }
 
 void characters(void)
