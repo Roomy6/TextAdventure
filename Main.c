@@ -15,8 +15,6 @@ int main(void)
 	int x, y;
 	int True;
 
-	char name[] = "";
-
 	printf("Welcome Player!\n");
 	printf("1 = Up | 2 = Down | 3 = Left | 4 = Right\n");
 
