@@ -7,17 +7,19 @@
 
 int main(void)
 {
-	int PlayerMotion;
-
 	// Cant Figure out coin system
-	char Coins[] = "15";
-	char charCoins[] = "Coins: ", Coins[100];
+	// nvm i did :D
+	// https://stackoverflow.com/questions/347132/append-an-int-to-char
 
+
+	int intCoins = 10;
+
+	char charCoins[] = "Coins: ";//, intCoins[100];
 	char name[] = "";
 
 	printf("Dear Player,\n");
 	printf("This Game is purely for a simple project ;)\n\n");
-	printf(charCoins,"\n");
+	printf("%s %d", charCoins, intCoins);
 
 	return 0;
 }
