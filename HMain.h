@@ -23,7 +23,7 @@ void delay(int number_of_seconds)
 void player(void)
 {
 	char name[20];
-	char gender[1];
+	char gender[20];
 
 	printf("|----------------------------------|\n");
 	printf("|                                  |\n");
@@ -47,17 +47,17 @@ void player(void)
 	printf("|                                  |\n");
 	printf("|----------------------------------|\n\n");
 
-	scanf("%d", &gender);
+	scanf("%s", &gender);
 
-	if (gender == 1)
+	if (gender == "1")
 	{
-		char gender[10] = "Male";
+		char gender[20] = "Male";
+		printf("%s\n", gender);
 	}
 	else {
-		char gender[10] = "Female";
+		char gender[20] = "Female";
+		printf("%s\n", gender);
 	}
-
-	printf("%s %d\n", name, gender);
 
 }
 
