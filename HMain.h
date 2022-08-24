@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>		// Defines scanf and printf
 #include <math.h>		// Has math functions
@@ -25,11 +25,36 @@ void player(void)
 	char name[20];
 	int gender;
 
-	printf("|----------------------------------|");
-	printf("|								   |");
-	printf("Enter a player name: \n");
+	printf("|----------------------------------|\n");
+	printf("|                                  |\n");
+	printf("|       Enter a player name:       |\n");
+	printf("|                                  |\n");
+	printf("|----------------------------------|\n\n");
+
 	scanf("%s", name);
+
 	printf("Welcome %s!\n", name);
+	delay(3);
+
+	system("cls");
+
+	printf("|----------------------------------|\n");
+	printf("|                                  |\n");
+	printf("|         Select a gender.         |\n");
+	printf("|                                  |\n");
+	printf("| 1) Male                          |\n");
+	printf("| 2) Female                        |\n");
+	printf("|                                  |\n");
+	printf("|----------------------------------|\n\n");
+
+	scanf("%d", &gender);
+
+	if (gender == 1)
+	{
+
+	}
+
+	printf("%s %d\n", name, gender);
 
 }
 
