@@ -23,12 +23,14 @@ void delay(int number_of_seconds)
 	while (clock() < start_time + milli_seconds);
 }
 
+void coins();
+
 void player(void)
 {
 	char name[10];
 	char charGender[20];
 	int intGender;
-	int health;
+	int health = 20;
 
 	printf("|----------------------------------|\n");
 	printf("|                                  |\n");
@@ -57,14 +59,18 @@ void player(void)
 
 	if (intGender == 1)
 	{
-		char charGender[20] = "Male";
+		char charGender[4] = "Male";
 		printf("%s\n", charGender);
 	}
 	else {
-		char charGender[20] = "Female";
+		char charGender[6] = "Female";
 		printf("%s\n", charGender);
 	}
 
+	// Possibe bug:
+	// If character entered "" nothing. might glitch. (just checked you cant enter nothing in)
+	// and if coins value is to high, it might also bug out.
+	// luckily players prob wont even be able to get get that high coin values lol.
 
 	char spaces[30] = { " " };
 	int length = strlen(name);
@@ -117,10 +123,11 @@ void player(void)
 	printf("| Name: %s%s|\n", name, spaces);
 	printf("| Gender: %s|\n", charGender, spaces);
 	printf("| Health: %d|\n", health, spaces);
-	printf("| 1) Male                          |\n");
-	printf("| 2) Female                        |\n");
+	printf("| Coins: %d|\n", coins, spaces);
+	printf("|      Enter Q To Continue...      |\n");
 	printf("|                                  |\n");
 	printf("|----------------------------------|\n\n");
+	printf("%s\n", charGender);
 
 }
 
