@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>		// Defines scanf and printf
@@ -8,6 +9,13 @@
 #include <time.h>		// Defines time
 
 
+
+char name[10];
+char charGender[20];
+int intGender;
+int health = 20;
+
+int intCoins = 100;
 
 // https://www.geeksforgeeks.org/time-delay-c/
 void delay(int number_of_seconds)
@@ -24,16 +32,48 @@ void delay(int number_of_seconds)
 
 void player(void)
 {
-	char name[10];
-	char charGender[20];
-	int intGender;
-	int health = 20;
 
-	int intCoins = 100;
+	// Possibe bug:
+	// If character entered "" nothing. might glitch. (just checked you cant enter nothing in)
+	// and if coins value is to high, it might also bug out (same to health).
+	// luckily players prob wont even be able to get get that high values lol.
 
-	// Cant Figure out coin system
-	// nvm i did :D
-	// https://stackoverflow.com/questions/347132/append-an-int-to-char
+	// this does not work because you are trying to call spaces inside another funtion.
+	// have to somehow figure out how to make them public.
+
+	//char spaces[30] = { " " };
+
+	int length = strlen(name);
+	if (length == 1) {
+		char spaces[100] = { "a                          a" };
+	}
+	else if (length == 2) {
+		char spaces[100] = { "a                         a" };
+	}
+	else if (length == 3) {
+		char spaces[100] = { "a                        a" };
+	}
+	else if (length == 4) {
+		char spaces[100] = { "a                       a" };
+	}
+	else if (length == 5) {
+		char spaces[100] = { "a                       a" };
+	}
+	else if (length == 6) {
+		char spaces[100] = { "a                     a" };
+	}
+	else if (length == 7) {
+		char spaces[100] = { "a                    a" };
+	}
+	else if (length == 8) {
+		char spaces[100] = { "a                   a" };
+	}
+	else if (length == 9) {
+		char spaces[100] = { "a                  a" };
+	}
+	else if (length == 10) {
+		char spaces[100] = { "a                 a" };
+	}
 
 	printf("|----------------------------------|\n");
 	printf("|                                  |\n");
@@ -70,48 +110,6 @@ void player(void)
 		printf("%s\n", charGender);
 	}
 
-	// Possibe bug:
-	// If character entered "" nothing. might glitch. (just checked you cant enter nothing in)
-	// and if coins value is to high, it might also bug out (same to health).
-	// luckily players prob wont even be able to get get that high values lol.
-
-
-	// this does not work because you are trying to call spaces inside another funtion.
-	// have to somehow figure out how to make them public.
-	
-	//char space[30] = { " " };
-	int length = strlen(name);
-	if (length == 1) {
-		char spaces[100] = { "a                          a" };
-	}
-	else if (length == 2) {
-		char spaces[100] = { "a                         a" };
-	}
-	else if (length == 3) {
-		char spaces[100] = { "a                        a" };
-	}
-	else if (length == 4) {
-		char spaces[100] = { "a                       a" };
-	}
-	else if (length == 5) {
-		char spaces[100] = { "a                       a" };
-	}
-	else if (length == 6) {
-		char spaces[100] = { "a                     a" };
-	}
-	else if (length == 7) {
-		char spaces[100] = { "a                    a" };
-	}
-	else if (length == 8) {
-		char spaces[100] = { "a                   a" };
-	}
-	else if (length == 9) {
-		char spaces[100] = { "a                  a" };
-	}
-	else if (length == 10) {
-		char spaces[100] = { "a                 a" };
-	}
-
 	// Player Preview
 
 	// Male
@@ -130,12 +128,14 @@ void player(void)
 
 	if (intGender = 1)
 	{
+		// https://stackoverflow.com/questions/347132/append-an-int-to-char
 		printf("|----------------------------------|\n");
 		printf("|                                  |\n");
 		printf("| Name: %s%s|\n", name, spaces);			// broken but works? yeah idk
 		printf("| Gender: %s|\n", charGender, spaces);		// bugged
 		printf("| Health: %d|\n", health, spaces);			// bugged
 		printf("| Coins: %d|\n", intCoins, spaces);			// bugged
+		printf("|                                  |\n");
 		printf("|      Enter Q To Continue...      |\n");
 		printf("|                                  |\n");
 		printf("|----------------------------------|\n\n");
