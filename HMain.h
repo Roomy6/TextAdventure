@@ -28,7 +28,7 @@ void coins();
 void player(void)
 {
 	char name[10];
-	char charGender[20];
+	char charGender;
 	int intGender;
 	int health = 20;
 
@@ -36,7 +36,7 @@ void player(void)
 	printf("|                                  |\n");
 	printf("|       Enter a player name:       |\n");
 	printf("|                                  |\n");
-	printf("|        10 character limit        |\n");
+	printf("|       10 Character Limit.        |\n");
 	printf("|----------------------------------|\n\n");
 
 	scanf("%s", name);
@@ -59,11 +59,11 @@ void player(void)
 
 	if (intGender == 1)
 	{
-		char charGender[4] = "Male";
+		char charGender[10] = "Male";
 		printf("%s\n", charGender);
 	}
 	else {
-		char charGender[6] = "Female";
+		char charGender[10] = "Female";
 		printf("%s\n", charGender);
 	}
 
@@ -75,34 +75,34 @@ void player(void)
 	char spaces[30] = { " " };
 	int length = strlen(name);
 	if (length == 1) {
-		char spaces[30] = { "                          " };
+		char spaces[100] = { "                          " };
 	}
 	else if (length == 2) {
-		char spaces[30] = { "                         " };
+		char spaces[100] = { "                         " };
 	}
 	else if (length == 3) {
-		char spaces[30] = { "                        " };
+		char spaces[100] = { "                        " };
 	}
 	else if (length == 4) {
-		char spaces[30] = { "                       " };
+		char spaces[100] = { "                       " };
 	}
 	else if (length == 5) {
-		char spaces[30] = { "                       " };
+		char spaces[100] = { "                       " };
 	}
 	else if (length == 6) {
-		char spaces[30] = { "                     " };
+		char spaces[100] = { "                     " };
 	}
 	else if (length == 7) {
-		char spaces[30] = { "                    " };
+		char spaces[100] = { "                    " };
 	}
 	else if (length == 8) {
-		char spaces[30] = { "                   " };
+		char spaces[100] = { "                   " };
 	}
 	else if (length == 9) {
-		char spaces[30] = { "                  " };
+		char spaces[100] = { "                  " };
 	}
 	else if (length == 10) {
-		char spaces[30] = { "                 " };
+		char spaces[100] = { "                 " };
 	}
 
 	// Player Preview
@@ -120,15 +120,37 @@ void player(void)
 	// Just noticed we have to do this on every border thing :D (help)
 
 	// Stpuid sdipufgsdopiufgh bug
-	printf("|----------------------------------|\n");
-	printf("| Name: %s%s|\n", name, spaces);
-	printf("| Gender: %s|\n", charGender, spaces);
-	printf("| Health: %d|\n", health, spaces);
-	printf("| Coins: %d|\n", coins, spaces);
-	printf("|      Enter Q To Continue...      |\n");
-	printf("|                                  |\n");
-	printf("|----------------------------------|\n\n");
-	printf("%s\n", charGender);
+
+	if (intGender = 1)
+	{
+		printf("|----------------------------------|\n");
+		printf("|                                  |\n");
+		printf("| Name: %s%s|\n", name, spaces);			// broken but works? yeah idk
+		printf("| Gender: %s|\n", charGender, spaces);		// bugged
+		printf("| Health: %d|\n", health, spaces);			// bugged
+		printf("| Coins: %d|\n", coins, spaces);			// bugged
+		printf("|      Enter Q To Continue...      |\n");
+		printf("|                                  |\n");
+		printf("|----------------------------------|\n\n");
+		printf("%s\n", charGender);
+	}
+	else if(intGender = 2) {
+		printf("|----------------------------------|\n");	//same here
+		printf("|                                  |\n");
+		printf("| Name: %s%s|\n", name, spaces);
+		printf("| Gender: %s|\n", charGender, spaces);
+		printf("| Health: %d|\n", health, spaces);
+		printf("| Coins: %d|\n", coins, spaces);
+		printf("|                                  |\n");
+		printf("|    ___                           |\n");
+		printf("|   |%s|                           |\n", fModel1);
+		printf("|   |%s|                           |\n", fModel2);
+		printf("|   |%s|                           |\n", fModel3);
+		printf("|                                  |\n");
+		printf("|      Enter Q To Continue...      |\n");
+		printf("|                                  |\n");
+		printf("|----------------------------------|\n\n");
+	}
 
 }
 
