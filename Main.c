@@ -14,10 +14,11 @@ int main(void)
 {
 
 	printf("Dear Player,\n");
-	printf("This Game is purely a simple project ;)\n\n");
+	printf("This Game is purely a simple project dont expect anything amazing.\n\n");
+	printf("Coded and made by Ruzzix and Roomy \n");
 
 	// Add's a delay of 2 seconds.
-	delay(2);
+	delay(3);
 
 	// Clears the console.
 	system("cls");
