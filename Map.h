@@ -8,5 +8,11 @@
 
 void Map(void)
 {
-	// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	//  N
+	//E   S
+	//  W
+
+	//NORTH, EAST, SOUTH, WEST
+
+
 }
