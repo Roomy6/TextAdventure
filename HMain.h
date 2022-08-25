@@ -22,7 +22,7 @@ void delay(int number_of_seconds)
 
 void player(void)
 {
-	char name[20];
+	char name[10];
 	char charGender[20];
 	int intGender;
 
@@ -30,6 +30,7 @@ void player(void)
 	printf("|                                  |\n");
 	printf("|       Enter a player name:       |\n");
 	printf("|                                  |\n");
+	printf("|        10 character limit        |\n");
 	printf("|----------------------------------|\n\n");
 
 	scanf("%s", name);
@@ -59,6 +60,23 @@ void player(void)
 		char charGender[20] = "Female";
 		printf("%s\n", charGender);
 	}
+
+	int i;
+	int length = strlen(name);
+	char space[] = " ";
+	char spaces[] = " ";
+	for (i = length; i != 0; i -= 1) {
+		strcat(spaces, space);
+	}
+
+	printf("|----------------------------------|\n");
+	printf("| Name: %s%s                       |\n", name, spaces);
+	printf("|                                  |\n");
+	printf("|                                  |\n");
+	printf("| 1) Male                          |\n");
+	printf("| 2) Female                        |\n");
+	printf("|                                  |\n");
+	printf("|----------------------------------|\n\n");
 
 	// Player Preview
 
