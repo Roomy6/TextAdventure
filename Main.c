@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-			/*		  Game		  */
-			/*By Roomy and Ruzzix.*/
+/*		  Game		  */
+/*By Roomy and Ruzzix.*/
 
 
 #include <stdio.h>		// Defines scanf and printf
