@@ -33,11 +33,11 @@ struct console
         CONSOLE_FONT_INFOEX cfi;
         cfi.cbSize = sizeof(cfi);
         cfi.nFont = 10;
-        cfi.dwFontSize.X = 0;                 // Width of each character in the font
-        cfi.dwFontSize.Y = 30;                // Height (0 - 50 recommended)
+        cfi.dwFontSize.X = 0;                   // Width of each character in the font
+        cfi.dwFontSize.Y = 30;                  // Height (0 - 50 recommended)
         cfi.FontFamily = FF_DONTCARE;
         cfi.FontWeight = FW_NORMAL;
-        std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
+        std::wcscpy(cfi.FaceName, L"Raster"); // Choose your font
         SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 
         r.Left =
