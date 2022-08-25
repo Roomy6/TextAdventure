@@ -1,5 +1,7 @@
 ﻿#pragma once
 #define _CRT_SECURE_NO_WARNINGS
+
+#include "spacecount.h"
 #include <stdio.h>		// Defines scanf and printf
 #include <math.h>		// Has math functions
 #include <stdlib.h>		// Defines rand
@@ -61,16 +63,42 @@ void player(void)
 		printf("%s\n", charGender);
 	}
 
-	int i;
+
+	char spaces[30] = { " " };
 	int length = strlen(name);
-	char space[] = " ";
-	char spaces[] = " ";
-	for (i = length; i != 0; i -= 1) {
-		strcat(spaces, space);
+	if (length == 1) {
+		char spaces[30] = { "                          " };
+	}
+	else if (length == 2) {
+		char spaces[30] = { "                         " };
+	}
+	else if (length == 3) {
+		char spaces[30] = { "                        " };
+	}
+	else if (length == 4) {
+		char spaces[30] = { "                       " };
+	}
+	else if (length == 5) {
+		char spaces[30] = { "                       " };
+	}
+	else if (length == 6) {
+		char spaces[30] = { "                     " };
+	}
+	else if (length == 7) {
+		char spaces[30] = { "                    " };
+	}
+	else if (length == 8) {
+		char spaces[30] = { "                   " };
+	}
+	else if (length == 9) {
+		char spaces[30] = { "                  " };
+	}
+	else if (length == 10) {
+		char spaces[30] = { "                 " };
 	}
 
 	printf("|----------------------------------|\n");
-	printf("| Name: %s%s                       |\n", name, spaces);
+	printf("| Name: %s%s|\n", name, spaces);
 	printf("|                                  |\n");
 	printf("|                                  |\n");
 	printf("| 1) Male                          |\n");
