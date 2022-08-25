@@ -1,5 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 
+			/*		  Game		  */
+			/*By Roomy and Ruzzix.*/
+
+
 #include <stdio.h>		// Defines scanf and printf
 #include <math.h>		// Has math functions
 #include <stdlib.h>		// Defines rand
@@ -14,7 +18,7 @@ BOOL WINAPI GetConsoleScreenBufferInfo(_In_ HANDLE hConsoleOutput, _Out_ PCONSOL
 
 int main(void)
 {
-	printf("This Game is purely a simple project dont expect anything amazing.\n\n");
+	printf("This Game is purely a simple project dont expect anything amazing.\n");
 	printf("Coded and made by Ruzzix and Roomy \n");
 
 	// Add's a delay of 3 seconds.

@@ -37,7 +37,7 @@ struct console
         cfi.dwFontSize.Y = 30;                  // Height (0 - 50 recommended)
         cfi.FontFamily = FF_DONTCARE;
         cfi.FontWeight = FW_NORMAL;
-        std::wcscpy(cfi.FaceName, L"Raster"); // Choose your font
+        std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
         SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 
         r.Left =
