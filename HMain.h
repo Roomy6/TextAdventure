@@ -97,15 +97,6 @@ void player(void)
 		char spaces[30] = { "                 " };
 	}
 
-	printf("|----------------------------------|\n");
-	printf("| Name: %s%s|\n", name, spaces);
-	printf("|                                  |\n");
-	printf("|                                  |\n");
-	printf("| 1) Male                          |\n");
-	printf("| 2) Female                        |\n");
-	printf("|                                  |\n");
-	printf("|----------------------------------|\n\n");
-
 	// Player Preview
 
 	// Male
@@ -117,6 +108,17 @@ void player(void)
 	char fModel1[4] = " @ ";
 	char fModel2[4] = "/#\ ";
 	char fModel3[4] = "| |";
+
+	// Just noticed we have to do this on every border thing :D (help)
+
+	printf("|----------------------------------|\n");
+	printf("| Name: %s%s|\n", name, spaces);
+	printf("| Gender: %s|\n", charGender, spaces);
+	printf("| Health: %d|\n", health, spaces);
+	printf("| 1) Male                          |\n");
+	printf("| 2) Female                        |\n");
+	printf("|                                  |\n");
+	printf("|----------------------------------|\n\n");
 
 }
 
