@@ -119,6 +119,7 @@ void player(void)
 
 	// Just noticed we have to do this on every border thing :D (help)
 
+	// Stpuid sdipufgsdopiufgh bug
 	printf("|----------------------------------|\n");
 	printf("| Name: %s%s|\n", name, spaces);
 	printf("| Gender: %s|\n", charGender, spaces);
