@@ -1,5 +1,3 @@
-// https://github.com/Imtial/TextAdventure/blob/master/adventure.c
-// https://www.geeksforgeeks.org/time-delay-c/
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>		// Defines scanf and printf

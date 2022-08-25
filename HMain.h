@@ -10,6 +10,7 @@
 
 
 
+// https://www.geeksforgeeks.org/time-delay-c/
 void delay(int number_of_seconds)
 {
 	// Converting time into milli_seconds
@@ -27,6 +28,7 @@ void player(void)
 	char name[10];
 	char charGender[20];
 	int intGender;
+	int health;
 
 	printf("|----------------------------------|\n");
 	printf("|                                  |\n");
