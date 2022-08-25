@@ -87,10 +87,11 @@ void player(void)
 
 	printf("+----------------------------------+\n");
 	printf("                                    \n");
-	printf("        Enter a player name:        \n");
+	printf("        Enter a player name         \n");
 	printf("                                    \n");
 	printf("        10 Character Limit.         \n");
-	printf("+----------------------------------+\n\n");
+	printf("+----------------------------------+\n");
+	printf("#>");
 
 	scanf("%s", charName);
 
@@ -161,7 +162,7 @@ fGender:;
 		printf("    |%s|						    \n", mModel1);
 		printf("    |%s|						    \n", mModel2);
 		printf("    |%s|						    \n", mModel3);
-		printf("                                    \n");
+		printf("     --                             \n");
 		printf("       Enter Q To Continue...       \n");
 		printf("                                    \n");
 		printf("+----------------------------------+\n\n");
@@ -181,7 +182,7 @@ fGender:;
 		printf("    |%s|						    \n", fModel1);
 		printf("    |%s|						    \n", fModel2);
 		printf("    |%s|						    \n", fModel3);
-		printf("                                    \n");
+		printf("     --                             \n");
 		printf("       Enter Q To Continue...       \n");
 		printf("                                    \n");
 		printf("+----------------------------------+\n\n");
