@@ -9,7 +9,6 @@
 #include <stdlib.h>		// Defines rand
 #include <string.h>		// Defines String
 #include <time.h>		// Defines time
-#include <Windows.h>
 
 #include "HMain.h";
 
@@ -38,13 +37,13 @@ void delay(int number_of_seconds)
 int main(void)
 {
 	int skipValue = 0;
-	int choice = 0, gameLvl = 0, playerLvl = 0;
+	int choice = 0, pathLvl = 0, gameLvl = 0, playerLvl = 0;
 
 	// Idk how to check if its has run already so i just thought of this simple skip thing lol.
 
 	if (skipValue == 0)
 	{
-		skipValue = 1;
+		int skipValue = 1;
 
 		printf("This Game is purely a simple project dont expect anything amazing.\n");
 		printf("Coded and made by Ruzzix and Roomy \n");
@@ -54,9 +53,16 @@ int main(void)
 		// Clears the console.
 		system("cls");
 		mainMenu();
-	}
-	else {
-
+	} else if (skipValue != 0)
+	{
+		while (pathLvl == 0)
+		{
+			while (gameLvl == 0)
+			{
+				system("cls");
+				printf("%s", charName);
+			}
+		}
 	}
 
 	return 0;
@@ -81,19 +87,21 @@ int mainMenu()
 	printf("+----------------------------------------+\n\n");
 
 	printf("#>");
-	scanf("%d", &intSelect);
+	scanf_s("%d", &intSelect);
 
 	if (intSelect == 1)
 	{
-		return player();
+		player();
 	}
 	else if (intSelect == 2)
 	{
-		printf("You have selected Settings.\n");
+		printf("Sorry, This feature is not available right now.\n");
+		delay(3);
+		mainMenu();
 	}
 	else if (intSelect == 3)
 	{
-		printf("You have selected Exit.\n");
+		return 0;
 	}
 }
 
@@ -164,9 +172,6 @@ int player()
 	printf("#>");
 
 	scanf("%s", charName);
-
-	printf("Welcome %s!\n", charName);
-	delay(3);
 
 	system("cls");
 
@@ -239,6 +244,12 @@ fGender:;
 		printf("+----------------------------------------+\n\n");
 
 		printf("#>");
+
+		// Warns the playewr and skips this part of the game...
+		// Cus its broken and not fully developed.
+		printf("\n YOU ARE IN DEBUG MODE! THIS IS NOT THE COMPLETE VERSION!\n");
+		delay(3);
+		main();
 	}
 	else {
 
@@ -262,7 +273,6 @@ fGender:;
 
 		printf("#>");
 	}
-
 }
 
 void characters(void)
