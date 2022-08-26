@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+
+int main(void);
 int mainMenu(void);
 int player(void);
 

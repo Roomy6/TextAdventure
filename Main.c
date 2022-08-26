@@ -35,27 +35,32 @@ void delay(int number_of_seconds)
 	while (clock() < start_time + milli_seconds);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 int main(void)
 {
+	int skipValue = 0;
 	int choice = 0, gameLvl = 0, playerLvl = 0;
 
-	printf("This Game is purely a simple project dont expect anything amazing.\n");
-	printf("Coded and made by Ruzzix and Roomy \n");
+	// Idk how to check if its has run already so i just thought of this simple skip thing lol.
 
-	// Add's a delay of 3 seconds.
-	delay(3);
-	// Clears the console.
-	system("cls");
-	mainMenu();
+	if (skipValue == 0)
+	{
+		skipValue = 1;
+
+		printf("This Game is purely a simple project dont expect anything amazing.\n");
+		printf("Coded and made by Ruzzix and Roomy \n");
+
+		// Add's a delay of 3 seconds.
+		delay(3);
+		// Clears the console.
+		system("cls");
+		mainMenu();
+	}
+	else {
+
+	}
 
 	return 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int mainMenu()
 {
@@ -220,10 +225,10 @@ fGender:;
 
 		printf("+----------------------------------------+\n");
 		printf("                                          \n");
-		printf("  Name:	    %s						      \n", charName);		// broken but works? yeah idk
+		printf("  Name:	    %s						      \n", charName);		// Fixed
 		//printf("  Gender:   %s						      \n", charGender);	// bugged
-		printf("  Health:   %d						      \n", intHealth);		// bugged
-		printf("  Coins:    %d						      \n", intCoins);		// bugged
+		printf("  Health:   %d						      \n", intHealth);		// Fixed (i think)
+		printf("  Coins:    %d						      \n", intCoins);		// Fixed
 		printf("                                          \n");
 		printf(" ___                                      \n");
 		printf("|%s|						              \n", mModel1);
@@ -267,7 +272,6 @@ void characters(void)
 	int Enemy();
 	int someone();
 	int yeeter();
-
 }
 
 void stats(void)
