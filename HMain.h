@@ -13,7 +13,7 @@
 char charName[10]	 = { "charName" };
 char charGender[10]	 = { "charGender" };
 
-int intGender		 = 2;
+int intSelect		 = 0;
 int intHealth		 = 20;
 int intCoins		 = 100;
 
@@ -30,8 +30,44 @@ void delay(int number_of_seconds)
 	while (clock() < start_time + milli_seconds);
 }
 
-void player(void)
+int mainMenu()
 {
+	system("cls");
+
+	printf("+----------------------------------------+\n");
+	printf("  . . .,.,,,'':::;;++**!!xxXX&&&&@@@@@@@@ \n");		// Banner
+	printf("  .  .....,.'::';;;+;**!!xxXX&&&&@@@@@@@@ \n");
+	printf(" .  . ,..,.,':':;:;;+**!!xxXX&&&&@@@@@@@@ \n");		// Just something random for now. (reminds me of the windows 95 logo)
+	printf("   . .....,,'':':;;+*+*!!xxXX&&&&@@@@@@@@ \n");
+	printf("  . . .,.,.,''':;;;+;**!!xxXX&&&&@@@@@@@@ \n");		// Banner End
+	printf("+----------------------------------------+\n");
+	printf("                                          \n");
+	printf("              [1] New Game                \n");		// Start
+	printf("              [2] Settings                \n");		// Settings?
+	printf("              [3] Exit                    \n");		// Exit
+	printf("                                          \n");
+	printf("+----------------------------------------+\n\n");
+
+	printf("#>");
+	scanf("%d", &intSelect);
+
+	if (intSelect == 1)
+	{
+		return player();
+	}
+	else if (intSelect == 2)
+	{
+		printf("You have selected Settings.\n");
+	}
+	else if (intSelect == 3)
+	{
+		printf("You have selected Exit.\n");
+	}
+}
+
+int player()
+{
+	system("cls");
 
 	// Possibe bug:
 	// If character entered "" nothing. might glitch. (just checked you cant enter nothing in)
@@ -85,13 +121,14 @@ void player(void)
 		char spaces[100] = { "a                 a" };
 	}*/
 
-	printf("┌──────────────────────────────────┐\n");
+	printf("+----------------------------------+\n");
 	printf("                                    \n");
 	printf("        Enter a player name         \n");
 	printf("                                    \n");
 	printf("        10 Character Limit.         \n");
 	printf("                                    \n");
-	printf("└──────────────────────────────────┘\n\n");
+	printf("+----------------------------------+\n\n");
+
 	printf("#>");
 
 	scanf("%s", charName);
@@ -101,19 +138,20 @@ void player(void)
 
 	system("cls");
 
-	printf("┌──────────────────────────────────┐\n");
+	printf("+----------------------------------+\n");
 	printf("                                    \n");
 	printf("          Select a gender.          \n");
 	printf("                                    \n");
 	printf("  [1] Male                          \n");
 	printf("  [2] Female                        \n");
 	printf("                                    \n");
-	printf("└──────────────────────────────────┘\n\n");
+	printf("+----------------------------------+\n\n");
+
 	printf("#>");
 
-	scanf("%d", &intGender);
+	scanf("%d", &intSelect);
 
-	if (intGender == 1)
+	if (intSelect == 1)
 	{
 		//char charGender[20] = { "Male" };
 		goto mGender;
@@ -145,7 +183,7 @@ fGender:;
 
 	// Stpuid sdipufgsdopiufgh bug
 
-	if (intGender == 1)
+	if (intSelect == 1)
 	{
 
 		// https://stackoverflow.com/questions/347132/append-an-int-to-char
@@ -153,68 +191,57 @@ fGender:;
 
 		system("cls");
 
-		printf("┌────────────────────────────────────────┐\n");
+		printf("+----------------------------------------+\n");
 		printf("                                          \n");
 		printf("  Name:	    %s						      \n", charName);		// broken but works? yeah idk
-		printf("  Gender:   %s						      \n", charGender);	// bugged
-		printf("  Health:   %d						      \n", intHealth);	// bugged
+		//printf("  Gender:   %s						      \n", charGender);	// bugged
+		printf("  Health:   %d						      \n", intHealth);		// bugged
 		printf("  Coins:    %d						      \n", intCoins);		// bugged
 		printf("                                          \n");
-		printf("     __                                   \n");
+		printf("     ___                                  \n");
 		printf("    |%s|						          \n", mModel1);
 		printf("    |%s|						          \n", mModel2);
 		printf("    |%s|						          \n", mModel3);
 		printf("     ---                                  \n");
 		printf("       Enter Q To Continue...             \n");
 		printf("                                          \n");
-		printf("└────────────────────────────────────────┘\n\n");
+		printf("+----------------------------------------+\n\n");
+
 		printf("#>");
 	}
 	else {
 
 		system("cls");
 
-		printf("┌────────────────────────────────────────┐\n");
+		printf("+----------------------------------------+\n");
 		printf("                                          \n");
 		printf("  Name:	    %s						      \n", charName);
-		printf("  Gender:   %s						      \n", charGender);
+		//printf("  Gender:   %s						      \n", charGender);
 		printf("  Health:   %d						      \n", intHealth);
 		printf("  Coins:    %d						      \n", intCoins);
 		printf("                                          \n");
-		printf("     __                                   \n");
+		printf("     ___                                  \n");
 		printf("    |%s|						          \n", fModel1);
 		printf("    |%s|						          \n", fModel2);
 		printf("    |%s|						          \n", fModel3);
 		printf("     ---                                  \n");
 		printf("       Enter Q To Continue...             \n");
 		printf("                                          \n");
-		printf("└────────────────────────────────────────┘\n\n");
+		printf("+----------------------------------------+\n\n");
+
 		printf("#>");
 	}
 
 }
 
-void mainMenu(void)
-{
-	printf("┌────────────────────────────────────────┐\n");
-	printf("│ . . .,.,,,'':::;;++**!!xxXX&&&&@@@@@@@@│\n");		// Banner
-	printf("│ .  .....,.'::';;;+;**!!xxXX&&&&@@@@@@@@│\n");
-	printf("│.  . ,..,.,':':;:;;+**!!xxXX&&&&@@@@@@@@│\n");		// Just something random for now. (reminds me of the windows 95 logo)
-	printf("│  . .....,,'':':;;+*+*!!xxXX&&&&@@@@@@@@│\n");
-	printf("│ . . .,.,.,''':;;;+;**!!xxXX&&&&@@@@@@@@│\n");		// Banner End
-	printf("└────────────────────────────────────────┘\n");
-	printf("                                          \n");
-	printf("              [1] Start                   \n");		// Start
-	printf("              [2] Settings                \n");		// Settings?
-	printf("              [3] Exit                    \n");		// Exit
-	printf("                                          \n");
-	printf("└────────────────────────────────────────┘\n");
-
-}
-
 void characters(void)
 {
-	// yeet
+	printf("character\n");
+
+	int Enemy();
+	int someone();
+	int yeeter();
+
 }
 
 void stats(void)

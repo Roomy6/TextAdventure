@@ -28,7 +28,7 @@ int main(void)
 	system("cls");
 
 	// forgot this();
-	player();
+	mainMenu();
 
 	return 0;
 }
