@@ -36,34 +36,28 @@ void delay(int number_of_seconds)
 
 int main(void)
 {
-	int skipValue = 0;
 	int choice = 0, pathLvl = 0, gameLvl = 0, playerLvl = 0;
 
-	// Idk how to check if its has run already so i just thought of this simple skip thing lol.
-
-	if (skipValue == 0)
+	while (pathLvl == 0)
 	{
-		int skipValue = 1;
-
-		printf("This Game is purely a simple project dont expect anything amazing.\n");
-		printf("Coded and made by Ruzzix and Roomy \n");
-
-		// Add's a delay of 3 seconds.
-		delay(3);
-		// Clears the console.
-		system("cls");
-		mainMenu();
-	} else if (skipValue != 0)
-	{
-		while (pathLvl == 0)
+		while (gameLvl == 0)
 		{
-			while (gameLvl == 0)
-			{
-				system("cls");
-				printf("%s", charName);
-			}
+			system("cls");
+			printf("%s", charName);
 		}
 	}
+
+	check();
+	system("cls");
+
+	printf("This Game is purely a simple project dont expect anything amazing.\n");
+	printf("Coded and made by Ruzzix and Roomy \n");
+
+	// Add's a delay of 3 seconds.
+	delay(3);
+	// Clears the console.
+	system("cls");
+	mainMenu();
 
 	return 0;
 }
@@ -86,7 +80,7 @@ int mainMenu()
 	printf("                                          \n");
 	printf("+----------------------------------------+\n\n");
 
-	printf("#>");
+	printf(">");
 	scanf_s("%d", &intSelect);
 
 	if (intSelect == 1)
@@ -169,7 +163,7 @@ int player()
 	printf("                                    \n");
 	printf("+----------------------------------+\n\n");
 
-	printf("#>");
+	printf(">");
 
 	scanf("%s", charName);
 
@@ -184,7 +178,7 @@ int player()
 	printf("                                    \n");
 	printf("+----------------------------------+\n\n");
 
-	printf("#>");
+	printf(">");
 
 	scanf("%d", &intSelect);
 
@@ -243,7 +237,7 @@ fGender:;
 		printf("                                          \n");
 		printf("+----------------------------------------+\n\n");
 
-		printf("#>");
+		printf(">");
 
 		// Warns the playewr and skips this part of the game...
 		// Cus its broken and not fully developed.
@@ -271,7 +265,7 @@ fGender:;
 		printf("                                          \n");
 		printf("+----------------------------------------+\n\n");
 
-		printf("#>");
+		printf(">");
 	}
 }
 
