@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="Main.c" />
     <ClCompile Include="Resize.cpp" />
-    <ClCompile Include="TEST.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HMain.h" />

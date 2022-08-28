@@ -243,7 +243,7 @@ fGender:;
 		// Cus its broken and not fully developed.
 		printf("\n YOU ARE IN DEBUG MODE! THIS IS NOT THE COMPLETE VERSION!\n");
 		delay(3);
-		main();
+		//main();
 	}
 	else {
 
