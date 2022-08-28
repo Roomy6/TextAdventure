@@ -1,13 +1,31 @@
 #include <SFML/Graphics.hpp>
 
-int main() {
-	sf::RenderWindow window(sf::VideoMode(600, 600), "SFML Works");
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "My Program");
+    window.setFramerateLimit(60);
 
-	while (window.isOpen())
-	{
-		window.clear(sf::Color::Black);
-		sf::RectangleShape rs(sf::Vector2f(100, 100));
-		window.draw(rs);
-		window.display();
-	}
+    sf::Font block;
+    block.loadFromFile("C:\\Projects\\C\\TextAdventure\\TextAdventure\\RES\\FONT\\Blocko.ttf");
+
+    sf::Text loadText;
+    loadText.setFont(block);
+    loadText.setString("Hello, World!");
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed) window.close();
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
+        }
+
+        window.clear();
+        window.draw(loadText);
+        window.display();
+    }
+
+    return 0;
 }
