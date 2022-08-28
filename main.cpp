@@ -1,43 +1,61 @@
-#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <String>
+#include <sstream>
+#include <SFML\Graphics.hpp>
 
-// Switched from console app to GUI (this is going to be a challenge)
+const unsigned int WIDTH = 900, HEIGHT = 800;
 
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(700, 500), "My Program");
-    window.setFramerateLimit(20);
+int main() {
+	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Text Adventure | By Roomy");
+	sf::Event event;
 
-    sf::Font block;
-    block.loadFromFile("RES\\FONT\\Blocko.ttf");
+	//CIRCLE (stole this code from somewhere)
+	sf::CircleShape circle;
+	circle.setPosition(100.f, 100.f);
+	circle.setRadius(150.f);
 
-    sf::Text text;
-    text.setFont(block);
-    text.setString("Hello, World!");
+	bool colorUp = true;
+	float colorValue = 0;
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed) window.close();
+	//FONT
+	sf::Font font;
+	font.loadFromFile("RES\\FONT\\Blocko.ttf");
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-            {
-                text.setString("You have pressed the escape key.");
-            }
+	//TEXT
+	sf::Text text;
+	text.setPosition(0, 0);
+	text.setFont(font);
+	text.setFillColor(sf::Color::White);
+	text.setCharacterSize(10);
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            {
-                // left key is pressed: move our character
-                text.move(5.f, 0.f);
-            }
+	//CLOCK, sf::clock starts on creation, has useful member funtions for keeping track of time
+	sf::Clock gameClock;
 
-        }
 
-        window.clear();
-        window.draw(text);
-        window.display();
-    }
+	//GAME LOOP
+	while (window.isOpen()) {
 
-    return 0;
+		while (window.pollEvent(event))
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+				window.close();
+
+		text.setString("Time: " + std::to_string(gameClock.getElapsedTime().asSeconds()));
+
+		//text.setString("Hello, World!");
+		//text.setPosition(sf::Vector2f{ window.getSize() / 2u }); // smart way of Width Height / 2)
+
+		//Fade out circle
+		colorValue += colorUp ? 0.1f : -0.1f;
+		colorUp = (colorValue < 0.0f || colorValue > 255.f ? !colorUp : colorUp);
+		circle.setFillColor(sf::Color((int)colorValue, (int)colorValue, (int)colorValue, 255));
+
+		//DRAW HERE ---------------------------------------------------------------------------
+		window.clear(sf::Color::Black); //clear screen with color
+
+		//draw shapes
+		window.draw(circle);
+		window.draw(text);
+
+		window.display();
+	}
 }
