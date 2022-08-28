@@ -6,7 +6,7 @@ int main()
     window.setFramerateLimit(60);
 
     sf::Font block;
-    block.loadFromFile("C:\\Projects\\C\\TextAdventure\\TextAdventure\\RES\\FONT\\Blocko.ttf");
+    block.loadFromFile("RES\\FONT\\Blocko.ttf");
 
     sf::Text loadText;
     loadText.setFont(block);
