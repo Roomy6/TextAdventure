@@ -1,2 +1,2 @@
 # TextAdventure
- A Simple Text Adventure Game (Trying to learn C)
+ A Simple Text Adventure Game
