@@ -31,7 +31,6 @@ int main() {
 	//CLOCK, sf::clock starts on creation, has useful member funtions for keeping track of time
 	sf::Clock gameClock;
 
-
 	//GAME LOOP
 	while (window.isOpen()) {
 
