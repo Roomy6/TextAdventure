@@ -1,9 +1,11 @@
 #include <SFML/Graphics.hpp>
 
+// Switched from console app to GUI (this is going to be a challenge)
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "My Program");
-    window.setFramerateLimit(60);
+    sf::RenderWindow window(sf::VideoMode(700, 500), "My Program");
+    window.setFramerateLimit(20);
 
     sf::Font block;
     block.loadFromFile("RES\\FONT\\Blocko.ttf");
@@ -19,7 +21,10 @@ int main()
         {
             if (event.type == sf::Event::Closed) window.close();
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            {
+                text.setString("You have pressed the escape key.");
+            }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             {
