@@ -8,9 +8,9 @@ int main()
     sf::Font block;
     block.loadFromFile("RES\\FONT\\Blocko.ttf");
 
-    sf::Text loadText;
-    loadText.setFont(block);
-    loadText.setString("Hello, World!");
+    sf::Text text;
+    text.setFont(block);
+    text.setString("Hello, World!");
 
     while (window.isOpen())
     {
@@ -20,10 +20,17 @@ int main()
             if (event.type == sf::Event::Closed) window.close();
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+            {
+                // left key is pressed: move our character
+                text.move(5.f, 0.f);
+            }
+
         }
 
         window.clear();
-        window.draw(loadText);
+        window.draw(text);
         window.display();
     }
 
